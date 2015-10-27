@@ -1,3 +1,8 @@
+CC=g++
+# Hey!, I am comment number 2. I want to say that CFLAGS will be the
+# options I'll pass to the compiler.
+CFLAGS=-l usb-1.0
+DEPS=PortalHandler.cpp
 #
 #  There exist several targets which are by default empty and which can be 
 #  used for execution of your targets. These targets are usually executed 
@@ -45,13 +50,13 @@
 
 
 # Environment 
-MKDIR=mkdir
-CP=cp
-CCADMIN=CCadmin
+#MKDIR=mkdir
+#CP=cp
+#CCADMIN=CCadmin
 
 
 # build
-build: .build-post
+#build: .build-post
 
 .build-pre:
 # Add your pre 'build' code here...
@@ -81,7 +86,9 @@ clobber: .clobber-post
 
 
 # all
-all: .all-post
+read_portal: main.cpp
+	$(CC) -o $@ $< $(DEPS) $(CFLAGS)
+
 
 .all-pre:
 # Add your pre 'all' code here...
@@ -91,7 +98,7 @@ all: .all-post
 
 
 # build tests
-build-tests: .build-tests-post
+#build-tests: .build-tests-post
 
 .build-tests-pre:
 # Add your pre 'build-tests' code here...
@@ -122,7 +129,7 @@ help: .help-post
 
 
 # include project implementation makefile
-include nbproject/Makefile-impl.mk
+#include nbproject/Makefile-impl.mk
 
 # include project make variables
-include nbproject/Makefile-variables.mk
+#include nbproject/Makefile-variables.mk

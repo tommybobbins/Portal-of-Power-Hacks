@@ -9,6 +9,7 @@
 #include "PortalHandler.h"
 //#include "PortalHandler.cpp"
 #include <stdio.h>
+#include <unistd.h>
 #include<sys/types.h>
 #include<iostream>
 #include <math.h>
@@ -48,7 +49,7 @@ int main(int argc, char** argv) {
 //		printf("Got figures\n");
 		
 		flashCount+=0.1;
-		usleep(20000);
+		usleep(20);
 	}
 	
 	return 0;
